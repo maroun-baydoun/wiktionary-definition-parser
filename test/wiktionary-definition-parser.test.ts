@@ -44,22 +44,22 @@ describe('wiktionary-definition-parser', () => {
 
     it('parses definition containing clipping of', () => {
       const definitions = parse(clippingDefinition, 0);
-      expect(definitions).toEqual(['Short for word']);
+      expect(definitions).toEqual(['short for word']);
     });
 
     it('parses definition containing short for', () => {
       const definitions = parse(shortForDefinition, 0);
-      expect(definitions).toEqual(['Short for word']);
+      expect(definitions).toEqual(['short for word']);
     });
 
     it('parses definition containing agent noun of', () => {
       const definitions = parse(agentNounDefinition, 0);
-      expect(definitions).toEqual(['Agent noun of word']);
+      expect(definitions).toEqual(['agent noun of word']);
     });
 
     it('parses definition containing alternative spelling of', () => {
       const definitions = parse(alternativeSpellingDefinition, 0);
-      expect(definitions).toEqual(['Alternative spelling of word']);
+      expect(definitions).toEqual(['alternative spelling of word']);
     });
 
     it('parses definition containing gerunf of', () => {

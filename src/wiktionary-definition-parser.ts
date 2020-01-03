@@ -19,13 +19,13 @@ const parseDefinitions = (wikitext: string, startIndex: number, definitions: str
     //Replace {{non-gloss definition|word}} {{non-gloss|word}} and derivatives with word
     .replace(/{{(?:non[-\s]gloss(?:\sdefinition)?|(?:n-g)|(?:ngd))\|(.[^{}]+)}}/g, '$1')
     //Replace {{clipping of|lang|word}} with `Short for word`
-    .replace(/{{clipping of\|[\w-]+\|(.[^{}]+)}}/g, 'Short for $1')
+    .replace(/{{clipping of\|[\w-]+\|(.[^{}]+)}}/g, 'short for $1')
     //Replace {{short for|lang|word}} with `Short for word`
-    .replace(/{{short for\|[\w-]+\|(.[^{}]+)}}/g, 'Short for $1')
+    .replace(/{{short for\|[\w-]+\|(.[^{}]+)}}/g, 'short for $1')
     //Replace {{agent noun of|lang|verb}} with `Agent noun of verb`
-    .replace(/{{agent noun of\|[\w-]+\|(.[^{}]+)}}/g, 'Agent noun of $1')
+    .replace(/{{agent noun of\|[\w-]+\|(.[^{}]+)}}/g, 'agent noun of $1')
     //Replace {{alternative spelling of|lang|word}} with `Alternative spelling of word`
-    .replace(/{{alternative spelling of\|[\w-]+\|(.[^{}]+)}}/g, 'Alternative spelling of $1')
+    .replace(/{{alternative spelling of\|[\w-]+\|(.[^{}]+)}}/g, 'alternative spelling of $1')
     //Replace {{gerund of|lang|verb}} with `gerund of verb`
     .replace(/{{gerund of\|[\w-]+\|(.[^{}]+)}}/g, 'gerund of $1')
     //Remove {{i|text}}
