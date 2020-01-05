@@ -39,6 +39,6 @@ export const gerundDefinition =
   `# {{gerund of|en|word}}
 `;
 
-export const iDefinition =
-  `# The definition {{i|word}}
+export const qualifierDefinition =
+  `# The definition {{qualifier|word1}} {{qual|word2}} {{q|word3}} {{i|word4}}
 `;

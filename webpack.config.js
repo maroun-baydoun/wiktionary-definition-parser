@@ -8,7 +8,7 @@ const PATHS = {
 module.exports = {
 
   entry: {
-    'wiktionary-definition-parser': path.join(PATHS.src, 'index.ts'),
+    'wiktionary-definition-parser': path.join(PATHS.src, 'wiktionary-definition-parser.ts'),
   },
   output: {
     path: PATHS.dist,

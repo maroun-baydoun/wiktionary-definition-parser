@@ -1,4 +1,4 @@
-import parse from '../src/';
+import parse from '../src/wiktionary-definition-parser';
 
 import {
   squareBracketsDefinition,
@@ -11,7 +11,7 @@ import {
   agentNounDefinition,
   alternativeSpellingDefinition,
   gerundDefinition,
-  iDefinition
+  qualifierDefinition,
 } from './fixtures';
 
 describe('wiktionary-definition-parser', () => {
@@ -62,14 +62,14 @@ describe('wiktionary-definition-parser', () => {
       expect(definitions).toEqual(['alternative spelling of word']);
     });
 
-    it('parses definition containing gerunf of', () => {
+    it('parses definition containing gerund of', () => {
       const definitions = parse(gerundDefinition, 0);
       expect(definitions).toEqual(['gerund of word']);
     });
 
-    it('parses definition containing i', () => {
-      const definitions = parse(iDefinition, 0);
-      expect(definitions).toEqual(['The definition']);
+    it('parses definition containing qualifiers', () => {
+      const definitions = parse(qualifierDefinition, 0);
+      expect(definitions).toEqual(['The definition (word1) (word2) (word3) (word4)']);
     });
   });
 });

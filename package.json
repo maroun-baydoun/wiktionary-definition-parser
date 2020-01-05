@@ -1,5 +1,6 @@
 {
   "name": "wiktionary-definition-parser",
+  "version": "0.1.0",
   "description": "Parse a Wiktionary word's definitions",
   "main": "dist/wiktionary-definition-parser.js",
   "types": "types/wiktionary-definition-parser.d.ts",
@@ -63,6 +64,5 @@
       "node"
     ]
   },
-  "dependencies": {},
-  "version": "0.1.0"
+  "dependencies": {}
 }
