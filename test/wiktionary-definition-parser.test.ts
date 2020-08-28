@@ -12,6 +12,7 @@ import {
   alternativeSpellingDefinition,
   gerundDefinition,
   qualifierDefinition,
+  verbalNounDefinition,
 } from './fixtures';
 
 describe('wiktionary-definition-parser', () => {
@@ -70,6 +71,11 @@ describe('wiktionary-definition-parser', () => {
     it('parses definition containing qualifiers', () => {
       const definitions = parse(qualifierDefinition, 0);
       expect(definitions).toEqual(['The definition (word1) (word2) (word3) (word4)']);
+    });
+
+    it('parses definition containing verbal noun', () => {
+      const definitions = parse(verbalNounDefinition, 0);
+      expect(definitions).toEqual(['verbal noun of word']);
     });
   });
 });

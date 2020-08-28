@@ -28,6 +28,8 @@ const parseDefinitions = (wikitext: string, startIndex: number, definitions: str
     .replace(/{{alternative spelling of\|[\w-]+\|(.[^{}]+)}}/g, 'alternative spelling of $1')
     //Replace {{gerund of|lang|verb}} with `gerund of verb`
     .replace(/{{gerund of\|[\w-]+\|(.[^{}]+)}}/g, 'gerund of $1')
+    //Replace {{verbal noun of|lang|verb}} with `verbal noun of verb`
+    .replace(/{{verbal noun of\|[\w-]+\|(.[^{}]+)}}/g, 'verbal noun of $1')
     //Replace {{qualifier|text}} and its derivatives with (text)
     .replace(/{{(?:qualifier|qual|q|i)\|([\w\s]+)}}/g, '($1)')
     .trim();

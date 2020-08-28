@@ -42,3 +42,7 @@ export const gerundDefinition =
 export const qualifierDefinition =
   `# The definition {{qualifier|word1}} {{qual|word2}} {{q|word3}} {{i|word4}}
 `;
+
+export const verbalNounDefinition =
+  `# {{verbal noun of|en|word}}
+`;
