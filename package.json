@@ -5,7 +5,7 @@
   "main": "dist/wiktionary-definition-parser.js",
   "types": "types/wiktionary-definition-parser.d.ts",
   "scripts": {
-    "format": "prettier --write './src/**/*.ts' 'webpack.config.js'",
+    "format": "prettier --write './src/**/*.ts' './test/**/*.ts' 'webpack.config.js'",
     "test": "jest",
     "test:watch": "jest --watch",
     "build": "webpack --mode production",

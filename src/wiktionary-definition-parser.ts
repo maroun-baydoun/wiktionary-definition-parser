@@ -38,6 +38,11 @@ const parseDefinitions = (
       /{{alternative spelling of\|[\w-]+\|(.[^{}]+)}}/g,
       "alternative spelling of $1"
     )
+    //Replace {{archaic spelling of|lang|word}} with `Archaic spelling of word`
+    .replace(
+      /{{archaic spelling of\|[\w-]+\|(.[^{}]+)}}/g,
+      "archaic spelling of $1"
+    )
     //Replace {{gerund of|lang|verb}} with `gerund of verb`
     .replace(/{{gerund of\|[\w-]+\|(.[^{}]+)}}/g, "gerund of $1")
     //Replace {{verbal noun of|lang|verb}} with `verbal noun of verb`

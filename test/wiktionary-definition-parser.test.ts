@@ -1,4 +1,4 @@
-import parse from '../src/wiktionary-definition-parser';
+import parse from "../src/wiktionary-definition-parser";
 
 import {
   squareBracketsDefinition,
@@ -10,72 +10,81 @@ import {
   shortForDefinition,
   agentNounDefinition,
   alternativeSpellingDefinition,
+  archaicSpellingDefinition,
   gerundDefinition,
   qualifierDefinition,
   verbalNounDefinition,
-} from './fixtures';
+} from "./fixtures";
 
-describe('wiktionary-definition-parser', () => {
-  describe('parse', () => {
-
-    it('parses definition containing square brackets', () => {
+describe("wiktionary-definition-parser", () => {
+  describe("parse", () => {
+    it("parses definition containing square brackets", () => {
       const definitions = parse(squareBracketsDefinition, 0);
-      expect(definitions).toEqual(['definition1, definition2']);
+      expect(definitions).toEqual(["definition1, definition2"]);
     });
 
-    it('parses definition containing gloss', () => {
+    it("parses definition containing gloss", () => {
       const definitions = parse(glossDefinition, 0);
-      expect(definitions).toEqual(['The definition (word)']);
+      expect(definitions).toEqual(["The definition (word)"]);
     });
 
-    it('parses definition containing labels', () => {
+    it("parses definition containing labels", () => {
       const definitions = parse(labelDefinition, 0);
-      expect(definitions).toEqual(['The definition (word1) (word2) (word3)']);
+      expect(definitions).toEqual(["The definition (word1) (word2) (word3)"]);
     });
 
-    it('parses definition containing links', () => {
+    it("parses definition containing links", () => {
       const definitions = parse(linkDefinition, 0);
-      expect(definitions).toEqual(['The definition word1 word2']);
+      expect(definitions).toEqual(["The definition word1 word2"]);
     });
 
-    it('parses definition containing non gloss', () => {
+    it("parses definition containing non gloss", () => {
       const definitions = parse(nongGlossDefinition, 0);
-      expect(definitions).toEqual(['The definition word1 word2 word3 word4 word5 word6']);
+      expect(definitions).toEqual([
+        "The definition word1 word2 word3 word4 word5 word6",
+      ]);
     });
 
-    it('parses definition containing clipping of', () => {
+    it("parses definition containing clipping of", () => {
       const definitions = parse(clippingDefinition, 0);
-      expect(definitions).toEqual(['short for word']);
+      expect(definitions).toEqual(["short for word"]);
     });
 
-    it('parses definition containing short for', () => {
+    it("parses definition containing short for", () => {
       const definitions = parse(shortForDefinition, 0);
-      expect(definitions).toEqual(['short for word']);
+      expect(definitions).toEqual(["short for word"]);
     });
 
-    it('parses definition containing agent noun of', () => {
+    it("parses definition containing agent noun of", () => {
       const definitions = parse(agentNounDefinition, 0);
-      expect(definitions).toEqual(['agent noun of word']);
+      expect(definitions).toEqual(["agent noun of word"]);
     });
 
-    it('parses definition containing alternative spelling of', () => {
+    it("parses definition containing alternative spelling of", () => {
       const definitions = parse(alternativeSpellingDefinition, 0);
-      expect(definitions).toEqual(['alternative spelling of word']);
+      expect(definitions).toEqual(["alternative spelling of word"]);
     });
 
-    it('parses definition containing gerund of', () => {
+    it("parses definition containing archaic spelling of", () => {
+      const definitions = parse(archaicSpellingDefinition, 0);
+      expect(definitions).toEqual(["archaic spelling of word"]);
+    });
+
+    it("parses definition containing gerund of", () => {
       const definitions = parse(gerundDefinition, 0);
-      expect(definitions).toEqual(['gerund of word']);
+      expect(definitions).toEqual(["gerund of word"]);
     });
 
-    it('parses definition containing qualifiers', () => {
+    it("parses definition containing qualifiers", () => {
       const definitions = parse(qualifierDefinition, 0);
-      expect(definitions).toEqual(['The definition (word1) (word2) (word3) (word4)']);
+      expect(definitions).toEqual([
+        "The definition (word1) (word2) (word3) (word4)",
+      ]);
     });
 
-    it('parses definition containing verbal noun', () => {
+    it("parses definition containing verbal noun", () => {
       const definitions = parse(verbalNounDefinition, 0);
-      expect(definitions).toEqual(['verbal noun of word']);
+      expect(definitions).toEqual(["verbal noun of word"]);
     });
   });
 });
